@@ -6,7 +6,7 @@ import axios from 'axios'
 
 export default function  AddChannel(props) {
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => {axios.post(`http://localhost:8080/addChannel`,{data})
+    const onSubmit = data => {axios.post(`https://socketiochatserver.herokuapp.com/addChannel`,{data})
     .then(res => {
       setTimeout(props.onClose(),10000);
       console.log(res.data);
