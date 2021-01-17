@@ -31,8 +31,8 @@ export class ChannelList extends React.Component {
         }
         return (
             <div className='channel-list'>
-                {list}
-        <Button onClick={this.toggleModal} variant="dark" size="lg" block>
+                <div>{list}</div>
+        <Button className="addChannelbtn" onClick={this.toggleModal} variant="dark" size="lg" block>
         <MdAddBox size={22}/>
         ADD CHANNEL  
         </Button> 

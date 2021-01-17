@@ -2,7 +2,11 @@ import React from 'react'
 import { Message } from './Message';
 
 export class MessagesPanel extends React.Component {
- 
+    construtor(){
+
+        // Create the ref in the constructor
+        this.focusRef = React.createRef();
+    }
     state = { input_value: '' }
     send = () => {
         if (this.state.input_value && this.state.input_value !== '') {
@@ -25,7 +29,6 @@ export class MessagesPanel extends React.Component {
         this.el.scrollIntoView({ behavior: 'smooth' });
       }
     render() {
-
         let list = <div className="no-content-message">NO MESSAGES TO SHOW <br></br>SEND A MESSAGE AND SAY HELLO!</div>;
         if (this.props.channel && this.props.channel.messages) {
             list = this.props.channel.messages.map(m => <Message key={m.id} id={m.id} senderName={m.senderName} text={m.text} date={m.date}/>);
@@ -38,7 +41,7 @@ export class MessagesPanel extends React.Component {
                 
                 {this.props.channel &&
                     <div className="messages-input">
-                        <input type="text" onChange={this.handleInput} value={this.state.input_value} />
+                        <input tabIndex='1' placeholder="Send a message!" ref={this.focusRef} autoFocus={true} type="text" onChange={this.handleInput} value={this.state.input_value} />
                         <button onClick={this.send}>Send</button>
                     </div>
                 }
