@@ -1,10 +1,8 @@
 import React from 'react';
 import { Channel } from './Channel';
-import AddChannel from './AddChannel'
 import Modal from './modal'
 import Button from 'react-bootstrap/Button'
 import { MdAddBox } from "react-icons/md";
-import axios from 'axios'
 
 export class ChannelList extends React.Component {
   

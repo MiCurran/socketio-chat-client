@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import { MdAddBox } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 export default function  AddChannel(props) {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {axios.post(`http://localhost:8080/addChannel`,{data})
     .then(res => {
       setTimeout(props.onClose(),10000);

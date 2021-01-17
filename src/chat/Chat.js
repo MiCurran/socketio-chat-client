@@ -2,7 +2,6 @@ import React from 'react';
 import { ChannelList } from './ChannelList';
 import './chat.scss';
 import  {MessagesPanel}  from './MessagesPanel';
-import AddChannel from './AddChannel'
 import socketClient from "socket.io-client";
 import date from 'date-and-time';
 const SERVER = 'https://socketiochatserver.herokuapp.com';
